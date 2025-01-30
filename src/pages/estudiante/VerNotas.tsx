@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../styles/vernotas.css";
 
 const VerNotas: React.FC = () => {
   // Simulando algunas notas de ejemplo

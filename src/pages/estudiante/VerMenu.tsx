@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../styles/vermenu.css";
 
 const VerMenu: React.FC = () => {
   // Simulando el menú del día

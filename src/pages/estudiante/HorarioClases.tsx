@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../styles/horariodeclaces.css";
 
 const HorarioClases: React.FC = () => {
   // Simulando el horario de clases
