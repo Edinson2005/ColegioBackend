@@ -1,14 +1,36 @@
+body{
+    background-color: #352424;
+}
 .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.imagenSchool{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.imagenSchool img{
+    width: 80%;
+    max-width: 400px;
+
+}
+
+
+.login{
+    width: 50%;
     text-align: center;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    width: fit-content; 
-    margin: auto; 
-    padding: 40px; 
-    border-radius: 20px;
+    align-items: center;
+    border: 1px solid black;
+    background-color: #6B5D5D;
+    border-radius: 5px;
 }
 .imagenPerfil{
     width: 40px;
@@ -23,11 +45,4 @@ input{
 .contraseña{
     font-size: 10px;
     color: blue;
-}
-
-.login{
-    border: none;
-    background-color: rgb(208, 231, 133);
-    padding:5px 15px 5px 15px ;
-    border-radius: 5px;
 }
