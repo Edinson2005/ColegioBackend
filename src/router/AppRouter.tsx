@@ -2,8 +2,16 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
-import Student from "../pages/Student";
-import Teacher from "../pages/teacher";
+import Teacher from "../pages/Teacher";
+
+
+
+
+
+
+
+import Student from "../pages/estudiante/Dashboard";
+
 
 const AppRouter: React.FC = () => {
     return(
