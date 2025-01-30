@@ -10,6 +10,8 @@ const StudentDashboard: React.FC = () => {
         <Link to="ver-notas" className="sidebar-link">Ver notas</Link>
         <Link to="ver-menu" className="sidebar-link">Ver menú</Link>
         <Link to="horario-clases" className="sidebar-link">Horario de clases</Link>
+        <Link to="Docentess" className="sidebar-link">Docentes</Link>
+
         <Link to="/login" className="sidebar-link logout">Salir</Link>
       </aside>
 
