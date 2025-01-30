@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 import Teacher from "../pages/Teacher";
 
 
-
+//
 
 // Rutas para el rol de estudiante
 import StudentDashboard from "../pages/estudiante/Dashboard"; // Cambié el nombre para reflejar el propósito
@@ -29,6 +29,11 @@ const AppRouter: React.FC = () => {
           <Route path="ver-menu" element={<VerMenu />} />
           <Route path="horario-clases" element={<HorarioClases />} />
         </Route>
+
+
+
+
+
 
         {/* Ruta para profesor */}
         <Route path="/teacher" element={<Teacher />} />
