@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom"; // Agregar Outlet aquí
-import "../../styles/estudiante.css";
+import "../../styles/estudiante.css"; // Asegúrate de que este archivo CSS contenga la clase adecuada
 
 const StudentDashboard: React.FC = () => {
   return (
@@ -15,7 +15,9 @@ const StudentDashboard: React.FC = () => {
 
       {/* Contenido principal */}
       <main className="main-content">
-        <Outlet />  {/* Este Outlet se reemplazará con las rutas hijas */}
+        <div className="background-image-container">
+          <Outlet />  {/* Este Outlet se reemplazará con las rutas hijas */}
+        </div>
       </main>
     </div>
   );
