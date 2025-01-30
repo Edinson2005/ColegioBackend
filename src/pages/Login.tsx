@@ -80,14 +80,15 @@ const Login: React.FC = () => {
 
             {/*IMAGEN DE SCHOOL */}
             <div className={styles.imagenSchool}>
+                <h1 className={styles.titulo}>Plataforma School</h1>
                 <img src={school} className={styles.img} alt="school"/>
 
             </div>
 
             {/*MAQUETACION DE FORMULARIO LOGIN */}
             <div className={styles.login}>
-                <img src={imagen} className={styles.imagenPerfil} alt="Perfil" />
-                <h1>Login</h1>
+                
+                <h1 className={styles.titulo}>Login</h1>
 
                 <input
                     type="email"
@@ -110,9 +111,11 @@ const Login: React.FC = () => {
                 {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                 {successMessage && <p className={styles.success}>{successMessage}</p>}
 
-                <button className={styles.login} onClick={handleLogin} disabled={isLoading}>
+                <button className={styles.ingresar} onClick={handleLogin} disabled={isLoading}>
                     {isLoading ? "Cargando..." : "Login"}
                 </button>
+
+                <h1 className={styles.registrarse}>Registrarse</h1>
             </div>
         </div>
     );
