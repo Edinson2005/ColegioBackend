@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
+import CardStudent from "./teacher/CardStudent";
 
 const Home : React.FC = () => {
     return(
         <>
-        <h1 className={styles.titulo}>plataforma school</h1>
+        <CardStudent />
         </>
     )
 }

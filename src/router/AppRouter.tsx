@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
-import Home from "../pages/Home";
 import Teacher from "../pages/teacher/Teacher";
 
 
@@ -13,6 +12,7 @@ import VerNotas from "../pages/estudiante/VerNotas";  // Asegúrate de tener est
 import VerMenu from "../pages/estudiante/VerMenu";    // Asegúrate de tener esta página
 import HorarioClases from "../pages/estudiante/HorarioClases"; // Asegúrate de tener esta página
 import Student from "../pages/teacher/Students";
+import Home from "../pages/Home";
 
 const AppRouter: React.FC = () => {
   return (
@@ -35,7 +35,7 @@ const AppRouter: React.FC = () => {
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/students" element={<Student />}/>
       
-        
+        <Route path="/example" element= {<Home />}/>
 
 
 
