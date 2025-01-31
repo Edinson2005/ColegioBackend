@@ -1,10 +1,12 @@
 
 import React from "react";
+import Sidebar from "../teacher/Sidebar"
 
 const Teacher : React.FC = () => {
     return(
         <>
-        <h1>hola desde teacher</h1>
+        <Sidebar />
+        <h1>teacher</h1>
         </>
     )
 }

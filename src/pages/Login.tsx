@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "../styles/Login.module.css";
-import imagen from "../assets/perfil.png";
 import { useNavigate } from "react-router-dom";
 import school from "../assets/school.png";
 
