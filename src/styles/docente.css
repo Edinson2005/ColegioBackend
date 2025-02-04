@@ -1,0 +1,67 @@
+
+  
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.background-image-container {
+  text-align: center;
+}
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Contenedor de la lista de docentes */
+  .docentes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Tarjetas de los docentes */
+  .docente-card {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .docente-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  /* Información del docente */
+  .docente-info {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .docente-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .docente-info p {
+    margin: 5px 0;
+    font-weight: 500;
+  }
+  
+  .docente-info strong {
+    color: #333;
+  }
+  
