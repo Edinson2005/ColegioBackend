@@ -13,6 +13,7 @@ import VerMenu from "../pages/estudiante/VerMenu";    // Asegúrate de tener est
 import HorarioClases from "../pages/estudiante/HorarioClases"; // Asegúrate de tener esta página
 import Student from "../pages/teacher/Students";
 import Home from "../pages/Home";
+import AñadirNotas from "../pages/teacher/AñadirNotas";
 
 const AppRouter: React.FC = () => {
   return (
@@ -34,7 +35,8 @@ const AppRouter: React.FC = () => {
         {/*Rutas para el profesor*/}  
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/students" element={<Student />}/>
-      
+        <Route path="/añadirNotas" element={<AñadirNotas />}/>
+        
         <Route path="/example" element= {<Home />}/>
 
 
