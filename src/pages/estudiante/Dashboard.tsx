@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom"; // Agregar Outlet aquí
 import "../../styles/estudiante.css"; // Asegúrate de que este archivo CSS contenga la clase adecuada
 
 const StudentDashboard: React.FC = () => {
+
+  
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
