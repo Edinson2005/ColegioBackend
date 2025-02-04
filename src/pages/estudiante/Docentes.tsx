@@ -1,52 +1,71 @@
+import React, { useEffect, useState } from "react";
+import "../../styles/docente.css";
 
-import React from "react";
-import { Link, Outlet } from "react-router-dom"; // Agregar Outlet aquí
-import "../../styles/docente.css"; 
+interface Teacher {
+  nombre: string;
+  email: string;
+  materia: string;
+  titulos: string;
+}
 
-// Datos de ejemplo (esto lo puedes reemplazar más tarde con datos reales desde el backend)
-const docentes = [
-  {
-    nombre: "Juan Pérez",
-    email: "juan.perez@instituto.edu",
-    materia: "Matemáticas",
-    titulos: "Licenciado en Matemáticas, Maestría en Educación",
-    foto: "https://via.placeholder.com/150" // Foto de ejemplo
-  },
-  {
-    nombre: "Ana Gómez",
-    email: "ana.gomez@instituto.edu",
-    materia: "Historia",
-    titulos: "Licenciada en Historia, Doctorado en Ciencias Sociales",
-    foto: "https://via.placeholder.com/150" // Foto de ejemplo
-  },
-  // Puedes agregar más docentes aquí
-];
+const TeachersList: React.FC = () => {
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-const DocentesDashboard: React.FC = () => {
-    return (
-      <div className="dashboard-container">
-        {/* Contenido principal */}
-        <main className="main-content">
-          <div className="background-image-container">
-            <h2>Docentes del Instituto</h2>
-            <div className="docentes-list">
-              {docentes.map((docente, index) => (
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      try {
+        const response = await fetch("https://backend-school-9ipd.onrender.com/teachers");
+        if (!response.ok) {
+          throw new Error("Error al obtener los docentes");
+        }
+        const data = await response.json();
+        setTeachers(data);
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeachers();
+  }, []);
+
+  return (
+    <div className="dashboard-container">
+      <main className="main-content">
+        <div className="background-image-container">
+          <h2>Docentes del Instituto</h2>
+
+          {loading && <p>Cargando docentes...</p>}
+          {error && <p className="error">{error}</p>}
+
+          <div className="docentes-list">
+            {!loading && !error && teachers.length > 0 ? (
+              teachers.map((teacher, index) => (
                 <div key={index} className="docente-card">
-                  <img src={docente.foto} alt={docente.nombre} className="docente-photo" />
+                  <img 
+                    src={require("../../assets/default-teacher.jpg")} 
+                    alt={teacher.nombre} 
+                    className="docente-photo" 
+                  />
                   <div className="docente-info">
-                    <h3>{docente.nombre}</h3>
-                    <p><strong>Email:</strong> {docente.email}</p>
-                    <p><strong>Materia:</strong> {docente.materia}</p>
-                    <p><strong>Títulos:</strong> {docente.titulos}</p>
+                    <h3>{teacher.nombre}</h3>
+                    <p><strong>Email:</strong> {teacher.email}</p>
+                    <p><strong>Materia:</strong> {teacher.materia}</p>
+                    <p><strong>Títulos:</strong> {teacher.titulos}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-            <Outlet />  {/* Este Outlet se reemplazará con las rutas hijas */}
+              ))
+            ) : (
+              !loading && <p>No hay docentes disponibles.</p>
+            )}
           </div>
-        </main>
-      </div>
-    );
-  };
-  
-  export default DocentesDashboard;
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default TeachersList;
