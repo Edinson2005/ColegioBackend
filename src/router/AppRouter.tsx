@@ -13,6 +13,9 @@ import VerNotas from "../pages/estudiante/VerNotas";  // Asegúrate de tener est
 import VerMenu from "../pages/estudiante/VerMenu";    // Asegúrate de tener esta página
 import HorarioClases from "../pages/estudiante/HorarioClases"; // Asegúrate de tener esta página
 import Docentes from "../pages/estudiante/Docentes";
+import StudentInfo from "../pages/estudiante/StudentInfo";
+
+
 
 const AppRouter: React.FC = () => {
   return (
@@ -25,6 +28,8 @@ const AppRouter: React.FC = () => {
         <Route path="/login" element={<Home />} />
         
         {/* Rutas para estudiantes */}
+        <Route path="/" element={<StudentInfo />} /> 
+
         <Route path="/student" element={<StudentDashboard />}>
           <Route path="ver-notas" element={<VerNotas />} />
           <Route path="ver-menu" element={<VerMenu />} />
