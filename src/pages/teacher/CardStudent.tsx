@@ -12,27 +12,18 @@ interface Students{
     telefono: String;
     direccion:String;
 }
-const CardStudent: React.FC = ()  => {
-const[student, setStudent] = useState<Students | null>(null);
-const navigate = useNavigate();
 
-useEffect(()  => {
-    fetch("https://backend-school-9ipd.onrender.com/students")
-    .then((response) => response.json())
-    .then((data) =>{
-        if(Array.isArray(data) && data.length > 0 ){
-            setStudent(data[0]);
-        }
-    })
-    .catch((error) => console.error("Error al obtener los datos:", error));
-}, []);
+interface CardStudentProps {
+    student: Students;
+}
 
-const handleCardClick = () => {
-    if (student) {
+const CardStudent: React.FC<CardStudentProps> = ({ student }) => {
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
         localStorage.setItem("selectedStudentId", student._id);
         navigate(`/añadirNotas`);
     }
-};
 
     return(
         <>
