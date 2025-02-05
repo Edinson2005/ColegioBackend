@@ -1,26 +1,32 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom"; // Agregar Outlet aquí
-import "../../styles/estudiante.css"; // Asegúrate de que este archivo CSS contenga la clase adecuada
+import React, { useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom"; 
+import "../../styles/estudiante.css";
 
 const StudentDashboard: React.FC = () => {
+  const navigate = useNavigate();
 
-  
+  useEffect(() => {
+    const studentData = localStorage.getItem("studentData");
+
+    // Si no hay datos guardados, redirigir al formulario
+    if (!studentData) {
+      navigate("/student-info");
+    }
+  }, [navigate]);
+
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
       <aside className="sidebar">
         <Link to="ver-notas" className="sidebar-link">Ver notas</Link>
         <Link to="ver-menu" className="sidebar-link">Ver menú</Link>
         <Link to="horario-clases" className="sidebar-link">Horario de clases</Link>
-        <Link to="Docentess" className="sidebar-link">Docentes</Link>
-
+        <Link to="docentes" className="sidebar-link">Docentes</Link>
         <Link to="/login" className="sidebar-link logout">Salir</Link>
       </aside>
 
-      {/* Contenido principal */}
       <main className="main-content">
         <div className="background-image-container">
-          <Outlet />  {/* Este Outlet se reemplazará con las rutas hijas */}
+          <Outlet />
         </div>
       </main>
     </div>
