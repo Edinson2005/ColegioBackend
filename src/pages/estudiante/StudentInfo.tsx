@@ -12,6 +12,9 @@ const StudentInfo: React.FC = () => {
     direccion: "",
   });
 
+  //[Nest] 90 - 02/05/2025, 2:22:14 AM  ERROR [ExceptionsHandler]     ( RENDER LOGS) 
+  // Error de conversión a ObjectId para el valor "{}}" (cadena de tipo) en la ruta "_id" para el modelo "Student"
+
   const [errors, setErrors] = useState({
     email: "",
     telefono: "",
