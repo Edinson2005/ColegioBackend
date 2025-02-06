@@ -11,8 +11,8 @@ import StudentDashboard from "../pages/estudiante/Dashboard"; // Cambié el nomb
 import VerNotas from "../pages/estudiante/VerNotas";  // Asegúrate de tener esta página
 import VerMenu from "../pages/estudiante/VerMenu";    // Asegúrate de tener esta página
 import HorarioClases from "../pages/estudiante/HorarioClases"; // Asegúrate de tener esta página
-import Student from "../pages/teacher/Students";
 import StudentInfo from "../pages/estudiante/StudentInfo";
+import Docentes from "../pages/estudiante/Docentes";
 
 
 
@@ -23,8 +23,8 @@ import StudentInfo from "../pages/estudiante/StudentInfo";
 import Home from "../pages/Home";
 import AñadirNotas from "../pages/teacher/AñadirNotas";
 
+import Student from "../pages/teacher/Students";
 
-import Docentes from "../pages/estudiante/Docentes";
 
 
 
@@ -48,7 +48,7 @@ const AppRouter: React.FC = () => {
           <Route path="ver-notas" element={<VerNotas />} />
           <Route path="ver-menu" element={<VerMenu />} />
           <Route path="horario-clases" element={<HorarioClases />} />
-          <Route path="Docentess" element={<Docentes />} />
+          <Route path="docentes" element={<Docentes />} />
 
         </Route>
 
