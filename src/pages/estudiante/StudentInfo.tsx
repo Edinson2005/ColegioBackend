@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//import "../../styles/studeninfo.css"; // Asegúrate de que el archivo CSS exista
+import "../../styles/studeninfo.css"; // Asegúrate de que el archivo CSS exista
 
 const StudentInfo: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +12,9 @@ const StudentInfo: React.FC = () => {
     direccion: "",
   });
 
+  //[Nest] 90 - 02/05/2025, 2:22:14 AM  ERROR [ExceptionsHandler]     ( RENDER LOGS) 
+  // Error de conversión a ObjectId para el valor "{}}" (cadena de tipo) en la ruta "_id" para el modelo "Student"
+
   const [errors, setErrors] = useState({
     email: "",
     telefono: "",
@@ -21,14 +24,6 @@ const StudentInfo: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
-
-  // Si el usuario ya llenó el formulario, redirigir al dashboard
-  useEffect(() => {
-    const studentData = localStorage.getItem("studentData");
-    if (studentData) {
-      navigate("/dashboard");
-    }
-  }, [navigate]);
 
   const validateField = (name: string, value: string) => {
     let error = "";
