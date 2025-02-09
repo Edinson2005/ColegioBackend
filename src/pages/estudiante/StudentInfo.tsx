@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "../../styles/studeninfo.css"; // Asegúrate de que el archivo CSS exista
 
 const StudentInfo: React.FC = () => {
@@ -12,9 +11,6 @@ const StudentInfo: React.FC = () => {
     direccion: "",
   });
 
-  //[Nest] 90 - 02/05/2025, 2:22:14 AM  ERROR [ExceptionsHandler]     ( RENDER LOGS) 
-  // Error de conversión a ObjectId para el valor "{}}" (cadena de tipo) en la ruta "_id" para el modelo "Student"
-
   const [errors, setErrors] = useState({
     email: "",
     telefono: "",
@@ -22,8 +18,7 @@ const StudentInfo: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
-  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState("");
 
   const validateField = (name: string, value: string) => {
     let error = "";
@@ -46,6 +41,7 @@ const StudentInfo: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setErrorMessage("");
+    setSuccessMessage("");
 
     try {
       const response = await axios.post(
@@ -54,8 +50,15 @@ const StudentInfo: React.FC = () => {
       );
 
       if (response.status === 201 || response.status === 200) {
-        localStorage.setItem("studentData", JSON.stringify(formData));
-        navigate("/dashboard");
+        setSuccessMessage("Datos enviados correctamente.");
+        // Aquí podrías limpiar el formulario si lo deseas
+        setFormData({
+          name: "",
+          email: "",
+          grado: "",
+          telefono: "",
+          direccion: "",
+        });
       }
     } catch (error) {
       console.error("Error al enviar los datos:", error);
@@ -69,6 +72,7 @@ const StudentInfo: React.FC = () => {
     <div className="student-info-container">
       <h2>Ingresa tus datos personales</h2>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {successMessage && <p className="success-message">{successMessage}</p>}
       <form onSubmit={handleSubmit} noValidate>
         <input
           type="text"

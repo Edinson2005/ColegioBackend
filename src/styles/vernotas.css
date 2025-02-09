@@ -10,15 +10,15 @@
   
   .notas-table th, .notas-table td {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #353232;
     text-align: center;
   }
   
   .notas-table th {
-    background-color: #f4f4f4;
+    background-color: #1c1919;
   }
   
   .notas-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #141313;
   }
   
