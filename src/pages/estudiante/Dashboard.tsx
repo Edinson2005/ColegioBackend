@@ -17,6 +17,7 @@ const StudentDashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
       <aside className="sidebar">
+
       <Link to="registro" className="sidebar-link">registro</Link>
 
         <Link to="ver-notas" className="sidebar-link">Ver notas</Link>

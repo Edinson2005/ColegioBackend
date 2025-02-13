@@ -9,7 +9,9 @@ const TeacherList: React.FC = () => {
   // Función para obtener los datos de la API
   const fetchTeachers = async () => {
     try {
-      const response = await axios.get("https://backend-school-9ipd.onrender.com/teachers");
+
+      // https://backend-school-9ipd.onrender.com/teachers   // probando localmente los enpints de backend
+      const response = await axios.get("http://localhost:4000/teachers");
       setTeachers(response.data); // Guardar los datos en el estado
       setLoading(false); // Indicar que la carga ha terminado
     } catch (err) {
